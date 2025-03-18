@@ -1,0 +1,82 @@
+{
+    "users": {
+        "Oscar": {
+            "lists": [
+                {
+                    "title": "Sistema de gesti\u00f3n interna de inform\u00e1tica (INFOMONTRER)",
+                    "todos": [
+                        {
+                            "text": "Sistema para cargar fotografias de alumnos",
+                            "completed": false,
+                            "image": ""
+                        }
+                    ],
+                    "completed": false,
+                    "position": 0
+                },
+                {
+                    "title": "Sistema de servicios generales",
+                    "todos": [
+                        {
+                            "text": "Generaci\u00f3n de reportes - Diarios o personalizados",
+                            "completed": false,
+                            "image": ""
+                        }
+                    ],
+                    "completed": false,
+                    "position": 1
+                },
+                {
+                    "title": "Sistema de asistencias",
+                    "todos": [
+                        {
+                            "text": "Crear dominio",
+                            "completed": true,
+                            "image": ""
+                        },
+                        {
+                            "text": "Crear BD",
+                            "completed": true,
+                            "image": ""
+                        },
+                        {
+                            "text": "Login de administradores y directivos",
+                            "completed": true,
+                            "image": ""
+                        },
+                        {
+                            "text": "Login de Docentes",
+                            "completed": true,
+                            "image": ""
+                        },
+                        {
+                            "text": "Aplicaci\u00f3n para que se genere en automatico la lista de docentes",
+                            "completed": true,
+                            "image": ""
+                        },
+                        {
+                            "text": "Gesti\u00f3n de usuarios",
+                            "completed": true,
+                            "image": ""
+                        },
+                        {
+                            "text": "Gesti\u00f3n de Docentes",
+                            "completed": true,
+                            "image": ""
+                        },
+                        {
+                            "text": "Gesti\u00f3n de alumnos",
+                            "completed": false,
+                            "image": ""
+                        }
+                    ],
+                    "completed": false,
+                    "position": 2
+                }
+            ]
+        },
+        "Mayel": {
+            "lists": []
+        }
+    }
+}
