@@ -1,4 +1,11 @@
-function createTodoList(listTitle = "", savedTodos = [], completed, position, totalList) {
+function createTodoList(
+  listTitle = "",
+  savedTodos = [],
+  completed,
+  position,
+  totalList,
+  minimized
+) {
   const $newList = $(
     todoListTemplate.replace("{{listTitle}}", listTitle || "Nueva Lista")
   );
@@ -15,8 +22,10 @@ function createTodoList(listTitle = "", savedTodos = [], completed, position, to
   const $completeListChBx = $newList.find(".complete-list");
   const $moveLeft = $newList.find(".move-left");
   const $moveRight = $newList.find(".move-right");
+  const $titleTop = $newList.find(".title-top");
 
   $todoList.data("position", position);
+  $todoList.data("completed", completed || false);
 
   // Configuración para agregar imagen a la tarea
   $addTodoImageBtn.on("click", function () {
@@ -63,6 +72,36 @@ function createTodoList(listTitle = "", savedTodos = [], completed, position, to
     $completeListChBx.prop("checked", true);
     $todoList.addClass("completed");
     $newList.data("completed", true);
+  }
+
+  // Crear un contenedor si no existe
+  if ($(".minimized-container").length === 0) {
+    $("body").append('<div class="minimized-container"></div>');
+  }
+
+  // Manejar la minimización de la lista
+  $newList.find(".btn-minimize-list").on("click", function () {
+    console.log("Botón de minimizar clickeado"); // Verificación de evento
+    const $container = $(".minimized-container");
+
+    if ($newList.hasClass("minimized-list")) {
+      $("#listsContainer").append($newList);
+    } else {
+      $container.append($newList);
+    }
+
+    $newList.toggleClass("minimized-list");
+
+    // Actualizar el estado de minimización
+    $newList.data("minimized", !$newList.hasClass("minimized-list"));
+
+    console.log("Nuevo estado minimizado:", $newList.data("minimized")); // Verificación de estado
+
+    saveLists(window.username);
+  });
+
+  if (minimized) {
+    $newList.addClass("minimized-list");
   }
 
   if (position == 0) {
@@ -132,6 +171,16 @@ function createTodoList(listTitle = "", savedTodos = [], completed, position, to
       $listContainer.hasClass("fullscreen-list") ? "hidden" : "auto"
     );
   });
+
+  //title top listTitle
+  $titleTop.text(listTitle);
+
+  $todosContainer
+    .off("click", ".todo-image")
+    .on("click", ".todo-image", function () {
+      $("#modalImage").attr("src", $(this).attr("src"));
+      $imageModal.show();
+    });
 
   $listsContainer.append($newList);
 }

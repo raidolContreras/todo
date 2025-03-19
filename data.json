@@ -12,7 +12,8 @@
                         }
                     ],
                     "completed": false,
-                    "position": 0
+                    "position": 0,
+                    "minimized": false
                 },
                 {
                     "title": "Sistema de servicios generales",
@@ -24,7 +25,8 @@
                         }
                     ],
                     "completed": false,
-                    "position": 1
+                    "position": 1,
+                    "minimized": false
                 },
                 {
                     "title": "Sistema de asistencias",
@@ -66,12 +68,13 @@
                         },
                         {
                             "text": "Gesti\u00f3n de alumnos",
-                            "completed": false,
+                            "completed": true,
                             "image": ""
                         }
                     ],
-                    "completed": false,
-                    "position": 2
+                    "completed": true,
+                    "position": 2,
+                    "minimized": false
                 }
             ]
         },

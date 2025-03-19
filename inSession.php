@@ -55,7 +55,7 @@
                     <div class="circle btn-delete-list" title="Eliminar lista">
                         <span class="red box"></span>
                     </div>
-                    <div class="circle disabled">
+                    <div class="circle btn-minimize-list">
                         <span class="yellow box"></span>
                     </div>
                     <div class="circle btn-fullscreen" title="Pantalla completa">
@@ -76,6 +76,7 @@
                             </button>
                         </div>
                     </div>
+                    <div class="ml-auto align-items-center title-top"></div>
                 </div>
                 <div class="mb-2">
                     <!-- Check de completado -->

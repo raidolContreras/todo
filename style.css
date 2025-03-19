@@ -1,32 +1,29 @@
 :root {
-    --positionX: 20px;
-    --positionXOpposite: -20px;
-    --positionY: 20px;
-    --positionYOpposite: -20px;
-    --angle: 145deg;
-    --blur: 60px;
-    --textColor: #001f3f;
-    --textColorOpposite: #e0e0e0;
-    --baseColor: #e0e0e0;
-    --darkColor: #bebebe;
-    --lightColor: #ffffff;
-    --firstGradientColor: #e0e0e0;
-    --secondGradientColor: #e0e0e0;
-    --size: 300px;
-    --radius: 50px;
+    /* Variables CSS consolidadas */
+    --primary-color: #1a7465;
+    --primary-hover: #146355;
+    --text-color: #626262;
+    --text-light: #999;
+    --text-dark: #2c3e50;
+    --bg-light: #F8FBFE;
+    --bg-dark: #e8e8e8;
+    --border-radius: 8px;
+    --transition-speed: 0.3s;
+    --box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
 }
 
-/* Fondo animado moderno */
+/* Reset y estilos base */
 body {
     margin: 0;
     padding: 0;
-    background-size: 400% 400%;
-    animation: gradientBG 15s ease infinite;
     font-family: 'Roboto', sans-serif;
     min-height: 100vh;
-    background: #e8e8e8;
+    background: var(--bg-dark);
+    background-size: 400% 400%;
+    animation: gradientBG 15s ease infinite;
 }
 
+/* Utilidades Flexbox */
 .flex-row {
     display: flex;
     flex-direction: row;
@@ -65,6 +62,7 @@ body {
     align-content: space-between;
 }
 
+/* Utilidades de texto */
 .text-center {
     text-align: center;
 }
@@ -102,6 +100,7 @@ body {
     text-overflow: ellipsis;
 }
 
+/* Animaciones */
 @keyframes gradientBG {
     0% {
         background-position: 0% 50%;
@@ -114,164 +113,6 @@ body {
     100% {
         background-position: 0% 50%;
     }
-}
-
-/* Encabezado con tipografía y sombra */
-.header {
-    color: #fff;
-    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
-    margin-bottom: 2rem;
-}
-
-
-.todo-list {
-    position: relative;
-    /* Importante para que z-index funcione */
-    padding: 20px;
-    margin: 10px 0;
-    background-color: #F8FBFE;
-    border-radius: 8px;
-    z-index: 10;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-}
-
-.todo-list.completed {
-    background-color: #1a7465;
-}
-
-.todo-list.completed .list-title,
-.todo-list.completed .todo-text,
-.todo-list.completed .list-item.completed .todo-text {
-    color: #fff;
-    text-decoration: line-through;
-}
-
-.tools {
-    display: flex;
-    align-items: center;
-    margin-bottom: 1rem;
-}
-
-.circle {
-    padding: 0 4px;
-}
-
-.box {
-    display: inline-block;
-    align-items: center;
-    width: 10px;
-    height: 10px;
-    padding: 1px;
-    border-radius: 50%;
-    cursor: pointer;
-}
-
-.red {
-    background-color: #ff605c;
-    border: 0.5px solid #b3372e;
-}
-
-.red:hover {
-    background-color: #ff5045;
-    transition: background-color 0.2s ease;
-}
-
-.disabled .red {
-    background-color: #a89494;
-    cursor: not-allowed;
-    border: 0.5px solid #a89494;
-}
-
-.yellow {
-    background-color: #ffbc34;
-    border: 0.5px solid #d1a330;
-}
-
-.yellow:hover {
-    background-color: #ffc535;
-    transition: background-color 0.2s ease;
-}
-
-.disabled .yellow {
-    background-color: #dfd9d0;
-    cursor: not-allowed;
-    border: 0.5px solid #dfd9d0;
-}
-
-.green {
-    background-color: #23b95d;
-    border: 0.5px solid #1a8d2b;
-}
-
-.green:hover {
-    background-color: #00e422;
-    transition: background-color 0.2s ease;
-}
-
-.disabled .green {
-    background-color: #d5e9e0;
-    cursor: not-allowed;
-    border: 0.5px solid #d5e9e0;
-}
-
-.list-title {
-    font-weight: 500;
-    margin-bottom: 15px;
-    color: #626262;
-}
-
-/* Estilo para los items de tarea */
-.list-item {
-    display: flex;
-    align-items: center;
-    padding: 10px 0;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.3);
-    transition: background-color 0.2s ease;
-    position: relative;
-    color: #626262;
-}
-
-.list-item:hover {
-    background-color: rgba(255, 255, 255, 0.1);
-}
-
-.list-item.completed {
-    text-decoration: line-through;
-    color: #ccc;
-    opacity: 0.7;
-}
-
-.list-item .form-check-input {
-    margin-right: 10px;
-}
-
-.list-item-actions {
-    position: absolute;
-    right: 10px;
-    top: 50%;
-    transform: translateY(-50%);
-    display: none;
-    align-items: center;
-}
-
-.list-item:hover .list-item-actions {
-    display: flex;
-}
-
-.list-item-actions .btn {
-    margin-left: 5px;
-    padding: 0.2rem 0.4rem;
-}
-
-.list-item-actions .todo-image {
-    width: 30px;
-    height: 30px;
-    object-fit: cover;
-    border-radius: 4px;
-    margin-right: 5px;
-    cursor: pointer;
-    border: 2px solid #fff;
-    transition: box-shadow 0.3s ease;
 }
 
 @keyframes bounceWobble {
@@ -300,6 +141,181 @@ body {
     }
 }
 
+@keyframes fadeOut {
+    0% {
+        background: linear-gradient(135deg, #0078ff 0%, #00c2ff 100%);
+    }
+
+    100% {
+        background: #f9f9f9;
+    }
+}
+
+@keyframes waveAnimation {
+    from {
+        transform: translateX(0);
+    }
+
+    to {
+        transform: translateX(-100%);
+    }
+}
+
+/* Encabezado */
+.header {
+    color: #fff;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
+    margin-bottom: 2rem;
+}
+
+/* Todo List */
+.todo-list {
+    position: relative;
+    padding: 20px;
+    margin: 10px 0;
+    background-color: var(--bg-light);
+    border-radius: var(--border-radius);
+    z-index: 10;
+    box-shadow: var(--box-shadow);
+    transition: background-color var(--transition-speed) ease;
+}
+
+.todo-list.completed {
+    background-color: var(--primary-color);
+}
+
+.todo-list.completed .list-title,
+.todo-list.completed .todo-text,
+.todo-list.completed .list-item.completed .todo-text {
+    color: #fff;
+    text-decoration: line-through;
+}
+
+/* Herramientas de la lista */
+.tools {
+    display: flex;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+
+.circle {
+    padding: 0 4px;
+}
+
+.box {
+    display: inline-block;
+    align-items: center;
+    width: 10px;
+    height: 10px;
+    padding: 1px;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+/* Colores de las herramientas */
+.red {
+    background-color: #ff605c;
+    border: 0.5px solid #b3372e;
+}
+
+.red:hover {
+    background-color: #ff5045;
+    transition: background-color var(--transition-speed) ease;
+}
+
+.yellow {
+    background-color: #ffbc34;
+    border: 0.5px solid #d1a330;
+}
+
+.yellow:hover {
+    background-color: #ffc535;
+    transition: background-color var(--transition-speed) ease;
+}
+
+.green {
+    background-color: #23b95d;
+    border: 0.5px solid #1a8d2b;
+}
+
+.green:hover {
+    background-color: #00e422;
+    transition: background-color var(--transition-speed) ease;
+}
+
+/* Estados deshabilitados */
+.disabled .red,
+.disabled .yellow,
+.disabled .green {
+    background-color: #ccc;
+    cursor: not-allowed;
+    border: 0.5px solid #ccc;
+}
+
+/* Títulos de lista */
+.list-title {
+    font-weight: 500;
+    margin-bottom: 15px;
+    color: var(--text-color);
+}
+
+/* Elementos de lista */
+.list-item {
+    display: flex;
+    align-items: center;
+    padding: 10px 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+    transition: background-color var(--transition-speed) ease;
+    position: relative;
+    color: var(--text-color);
+}
+
+.list-item:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+.list-item.completed {
+    text-decoration: line-through;
+    color: #ccc;
+    opacity: 0.7;
+}
+
+.list-item .form-check-input {
+    margin-right: 10px;
+    cursor: pointer;
+}
+
+/* Acciones de los elementos */
+.list-item-actions {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    display: none;
+    align-items: center;
+}
+
+.list-item:hover .list-item-actions {
+    display: flex;
+}
+
+.list-item-actions .btn {
+    margin-left: 5px;
+    padding: 0.2rem 0.4rem;
+}
+
+/* Imágenes en los elementos */
+.list-item-actions .todo-image {
+    width: 30px;
+    height: 30px;
+    object-fit: cover;
+    border-radius: 4px;
+    margin-right: 5px;
+    cursor: pointer;
+    border: 2px solid #fff;
+    transition: box-shadow var(--transition-speed) ease;
+}
+
 .list-item-actions .todo-image:hover {
     animation: bounceWobble 0.8s ease;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
@@ -313,21 +329,38 @@ body {
     padding: 0.375rem 0.75rem;
 }
 
+.input {
+    border: none;
+    outline: none;
+    border-radius: 15px;
+    padding: 1em;
+    background-color: #ccc;
+    box-shadow: inset 2px 5px 10px rgba(0, 0, 0, 0.3);
+    transition: 300ms ease-in-out;
+}
+
+.input:focus {
+    background-color: #f0f0f0;
+    border-radius: 20px;
+    box-shadow: inset 2px 5px 10px rgba(82, 82, 82, 0.3);
+}
+
+/* Zona de arrastrar y soltar */
 .custom-dropzone {
     position: relative;
     padding: 20px;
     text-align: center;
     cursor: pointer;
-    color: #626262;
+    color: var(--text-color);
     margin-top: 10px;
-    border-radius: 8px;
+    border-radius: var(--border-radius);
     background-color: #f9f9f9;
-    transition: background-color 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    transition: background-color var(--transition-speed) ease-in-out,
+        box-shadow var(--transition-speed) ease-in-out;
     overflow: hidden;
-    border: 3px dashed #626262;
+    border: 3px dashed var(--text-color);
 }
 
-/* Animación del borde */
 .custom-dropzone::before {
     content: "";
     position: absolute;
@@ -337,25 +370,22 @@ body {
     bottom: 0;
     border-radius: inherit;
     pointer-events: none;
-    transition: border-color 0.3s ease-in-out;
+    transition: border-color var(--transition-speed) ease-in-out;
 }
 
-/* Glow effect */
 .custom-dropzone:hover {
-    background: linear-gradient(135deg, #1a7465 0%, #00c2ff 100%);
+    background: linear-gradient(135deg, var(--primary-color) 0%, #00c2ff 100%);
     color: #fff;
 }
 
-/* Texto bien alineado */
 .custom-dropzone span {
     display: block;
     font-size: 16px;
     font-weight: bold;
-    color: #626262;
-    transition: color 0.3s ease-in-out;
+    color: var(--text-color);
+    transition: color var(--transition-speed) ease-in-out;
 }
 
-/* Estado Drag Over */
 .custom-dropzone.dragover {
     background: linear-gradient(135deg, #0078ff 0%, #00c2ff 100%);
     color: #fff;
@@ -367,20 +397,158 @@ body {
     color: #fff;
 }
 
-/* Transición suave al soltar el archivo */
 .custom-dropzone.dropped {
     animation: fadeOut 0.8s ease-in-out forwards;
 }
 
-/* Animación al soltar */
-@keyframes fadeOut {
-    0% {
-        background: linear-gradient(135deg, #0078ff 0%, #00c2ff 100%);
-    }
+/* Texto de tareas */
+.todo-text {
+    font-size: 16px;
+    margin-bottom: 5px;
+    cursor: pointer;
+    transition: color var(--transition-speed) ease;
+}
 
-    100% {
-        background: #f9f9f9;
-    }
+.todo-text:hover {
+    color: #2b325a;
+}
+
+.list-item.completed .todo-text {
+    text-decoration: line-through;
+    color: var(--text-light);
+}
+
+.list-item.completed .todo-text:hover {
+    color: var(--text-color);
+}
+
+/* Botones */
+.button {
+    background-color: #e4e4e4;
+    border: none;
+    border-radius: 10px;
+    box-shadow: inset 5px 5px 5px #c4c4c4,
+        inset -5px -5px 5px #ffffff;
+    color: #333;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Segoe UI', sans-serif;
+    font-size: 13px;
+    font-weight: bold;
+    margin: 3px;
+    padding: 10px;
+    text-transform: uppercase;
+    transition: box-shadow var(--transition-speed) ease;
+}
+
+.button:hover {
+    box-shadow: none;
+}
+
+/* Botones de edición y eliminación */
+.btn-edit-todo,
+.btn-delete-todo {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 5px;
+    color: var(--text-light);
+    font-size: 18px;
+    transition: color var(--transition-speed) ease;
+}
+
+.btn-edit-todo:hover,
+.btn-delete-todo:hover {
+    color: #666;
+}
+
+.btn-edit-todo i,
+.btn-delete-todo i {
+    font-size: 18px;
+    vertical-align: middle;
+}
+
+.btn-separator {
+    color: var(--text-light);
+    margin: 0 8px;
+    font-size: 18px;
+}
+
+/* Botones de movimiento */
+.btn-mover {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    transition: background var(--transition-speed) ease-in-out;
+}
+
+.btn-mover:hover {
+    background-color: rgba(0, 0, 0, 0.1);
+}
+
+.btn-mover i {
+    font-size: 20px;
+    color: var(--text-dark);
+}
+
+.btn-mover.disabled {
+    cursor: not-allowed;
+    opacity: 0.5;
+    pointer-events: none;
+}
+
+.btn-mover.disabled i {
+    color: #ccc;
+}
+
+/* Contenedor para posicionar los botones */
+.botones-container {
+    display: flex;
+    justify-content: space-between;
+    width: 100px;
+}
+
+/* Estilos para listas completadas */
+.todo-list.completed .btn-mover {
+    background-color: transparent;
+}
+
+.todo-list.completed .btn-mover:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+.todo-list.completed .btn-mover i {
+    color: #f8f8f8;
+}
+
+.todo-list.completed .btn-mover.disabled {
+    cursor: not-allowed !important;
+    opacity: 0.5;
+    background-color: transparent !important;
+    pointer-events: none;
+}
+
+.todo-list.completed .btn-mover.disabled i {
+    color: #ccc !important;
+}
+
+/* Interfaz de usuario */
+.input-group .form-control {
+    border-radius: 0.25rem 0 0 0.25rem;
+}
+
+.input-group .btn {
+    border-radius: 0 0.25rem 0.25rem 0;
+    transition: background-color var(--transition-speed) ease;
 }
 
 .fullscreen-list {
@@ -395,60 +563,79 @@ body {
     padding: 20px;
 }
 
-/* Ajuste de formularios para agregar listas y tareas */
-.input-group .form-control {
-    border-radius: 0.25rem 0 0 0.25rem;
+.title-top {
+    display: none;
 }
 
-.input-group .btn {
-    border-radius: 0 0.25rem 0.25rem 0;
-    transition: background-color 0.3s ease;
-}
-
-.input {
-    border: none;
-    outline: none;
-    border-radius: 15px;
-    padding: 1em;
-    background-color: #ccc;
-    box-shadow: inset 2px 5px 10px rgba(0, 0, 0, 0.3);
-    transition: 300ms ease-in-out;
-}
-
-.input:focus {
-    border: none;
-    outline: none;
-    border-radius: 20px;
-    padding: 1em;
-    background-color: #f0f0f0;
-    box-shadow: inset 2px 5px 10px rgba(82, 82, 82, 0.3);
-    transition: 300ms ease-in-out;
-}
-
-.button {
-    background-color: #e4e4e4;
-    border: none;
-    border-radius: 10px;
-    box-shadow: inset 5px 5px 5px #c4c4c4,
-        inset -5px -5px 5px #ffffff;
-    color: #333;
-    cursor: pointer;
+/* Contenedor de listas minimizadas */
+.minimized-container {
+    position: fixed;
+    bottom: 0;
+    right: 0;
     display: flex;
     flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    font-size: 13px;
-    font-weight: bold;
-    margin: 3px;
+    gap: 10px;
+    /* Espaciado entre las listas */
+    z-index: 1000;
+}
+
+/* Lista minimizada */
+.minimized-list {
+    width: 300px;
+    height: 50px;
+    /* Altura reducida */
+    overflow: hidden;
+    transition: transform 0.5s ease-in-out, height 0.5s ease-in-out;
+    transform: translateY(0);
+}
+
+/* Cuando la lista está minimizada */
+.minimized-list.minimized {
+    height: 40px;
+    transform: translateY(0);
+}
+
+/* Ocultar todo el contenido de la lista cuando está minimizada */
+.minimized-list .todo-list > * {
+    display: none; /* Oculta todos los hijos */
+}
+.minimized-list .todo-list {
     padding: 10px;
-    text-transform: uppercase;
 }
 
-.button:hover {
-    box-shadow: none;
+/* Mostrar solo la barra superior */
+.minimized-list .todo-list .tools {
+    display: block;
 }
 
+.minimized-list .btn-fullscreen,
+.minimized-list .move-left,
+.minimized-list .move-right {
+    display: none;
+}
+
+/* Mantener visibles solo la barra superior con los botones y el título */
+.minimized-list .todo-list .tools,
+.minimized-list .todo-list .title-top {
+    display: flex !important;
+    justify-content: space-between;
+    align-items: center;
+    color: white;
+}
+
+/* Animación cuando se minimiza */
+@keyframes minimizeSlide {
+    from {
+        transform: translateY(100%);
+    }
+
+    to {
+        transform: translateY(0);
+    }
+}
+
+
+/* Footer y animaciones */
 footer {
     position: fixed;
     bottom: 0;
@@ -458,7 +645,6 @@ footer {
     z-index: 0;
 }
 
-/* Contenedor de las olas */
 .wave-container {
     width: 200%;
     display: flex;
@@ -470,164 +656,17 @@ footer {
     position: relative;
 }
 
-
-/* Estilo de la onda */
 .animated-wave {
     width: 100%;
     flex-shrink: 0;
     animation: waveAnimation 10s linear infinite;
 }
 
-
 .footer-user {
     position: absolute;
     bottom: 10px;
-    /* Ajusta según necesites */
     right: 10px;
-    /* Ajusta según necesites */
     z-index: 10;
-    /* Para que se muestre por encima del SVG */
     color: #fff;
-    /* O el color que se adecúe a tu diseño */
     font-size: 16px;
-    /* Ajusta el tamaño de fuente según tu diseño */
-}
-
-/* Animación para mover las olas de forma continua */
-@keyframes waveAnimation {
-    from {
-        transform: translateX(0);
-    }
-
-    to {
-        transform: translateX(-100%);
-    }
-}
-
-.todo-text {
-    font-size: 16px;
-    margin-bottom: 5px;
-    cursor: pointer;
-    transition: color 0.3s ease;
-}
-
-.todo-text:hover {
-    color: #2b325a;
-    transition: color 0.3s ease;
-}
-
-.list-item.completed .todo-text {
-    text-decoration: line-through;
-    color: #999;
-}
-
-.list-item.completed .todo-text:hover {
-    color: #626262;
-}
-
-.form-check-input {
-    cursor: pointer;
-}
-
-/* Botones de edicion y eliminacion */
-.btn-edit-todo,
-.btn-delete-todo {
-    background: none;
-    border: none;
-    cursor: pointer;
-    padding: 5px;
-    color: #999; /* Color gris similar al de la imagen */
-    font-size: 18px;
-    transition: color 0.3s ease;
-}
-
-.btn-edit-todo:hover,
-.btn-delete-todo:hover {
-    color: #666; /* Oscurece un poco al pasar el mouse */
-}
-
-.btn-edit-todo i,
-.btn-delete-todo i {
-    font-size: 18px;
-    vertical-align: middle;
-}
-
-.btn-separator {
-    color: #999; /* Color del separador */
-    margin: 0 8px;
-    font-size: 18px;
-}
-
-/* Estilos generales de los botones */
-.btn-mover {
-    background-color: transparent;
-    border: none;
-    cursor: pointer;
-    padding: 10px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
-    transition: background 0.3s ease-in-out;
-}
-
-/* Efecto hover */
-.btn-mover:hover {
-    background-color: rgba(0, 0, 0, 0.1);
-}
-
-/* Iconos */
-.btn-mover i {
-    font-size: 20px;
-    color: #2c3e50; /* Color oscuro similar al de la imagen */
-}
-
-.btn-mover.disabled {
-    background-color: transparent;
-    border: none;
-    cursor: not-allowed;
-    padding: 10px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
-    transition: background 0.3s ease-in-out;
-}
-
-.btn-mover.disabled i {
-    color: #ccc; /* Color gris claro para contrastar con el fondo oscuro */
-}
-
-/* Contenedor para posicionar los botones */
-.botones-container {
-    display: flex;
-    justify-content: space-between;
-    width: 100px; /* Ajustar al tamaño deseado */
-}
-
-.todo-list.completed .btn-mover {
-    background-color: transparent;
-    border: none;
-    cursor: pointer;
-    padding: 10px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
-    transition: background 0.3s ease-in-out;
-}
-
-.todo-list.completed .btn-mover:hover {
-    background-color: rgba(255, 255, 255, 0.1);
-}
-
-.todo-list.completed .btn-mover i {
-    font-size: 20px;
-    color: #f8f8f8; /* Color claro para contrastar con el fondo oscuro */
 }
